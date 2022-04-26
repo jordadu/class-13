@@ -85,13 +85,13 @@ glance(ols2)
 ols_robust = lm_robust(total_amount ~ trip_distance + passenger_count , data = df_s)
 ols_robust %>% tidy(conf.int = TRUE)
 
-# replicar resultados de Stata
+# replicar resultados de Stata
 ols_stata = lm_robust(total_amount ~ trip_distance + passenger_count , data = df_s , se_type = "stata")
 ols_stata %>% tidy(conf.int = TRUE)
 
 # Print the HAC VCOV
 ols_hac = coeftest(ols, vcov = NeweyWest) # library lmtest
-ols_hac %>% tidy(conf.int = TRUE)
+ols_hac %>% tidy(conf.int = TRUE) 
 
 # cluster standar errors
 #ols_cluster = lm_robust(total_amount ~ trip_distance + passenger_count , data=df_s , clusters=passenger_count)
