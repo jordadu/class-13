@@ -23,7 +23,6 @@ p_load(tidyverse, # llamar y/o instalar las librerias de la clase
 browseURL("https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page") # source
 browseURL("https://www1.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_green.pdf") # data dictionaries 
 df = read.csv("https://nyc-tlc.s3.amazonaws.com/trip+data/green_tripdata_2020-12.csv")
-bog = import("input/bog_mhv.rds")
 
 # trip_distance: The elapsed trip distance in miles reported by the taximeter
 # total_amount: The total amount charged to passengers. Does not include cash tips.
@@ -154,7 +153,7 @@ stargazer(ols, ols2,
           dep.var.labels = c('','Number of flights',''), 
           df = FALSE,
           digits = 3, 
-          out = paste0('data_10/output/ols.text'))
+          out = paste0('output/ols.text'))
 
 # coefplot
 mods = list('Logit' = logit_marg , 'Probit' = probit_marg , "OLS" = ols_lineal)
